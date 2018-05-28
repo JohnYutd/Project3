@@ -1,0 +1,17 @@
+*
+#header{
+	line-height:60px;
+	height: 60px;
+	font-size:30px;
+	text-align: center;
+	color:white;
+	background-color:blue;
+}
+
+.formclass{
+	height: 300px;
+	width: 600px;
+	background-color: #F0FFFF;
+	margin:auto;
+	border:groove;
+}

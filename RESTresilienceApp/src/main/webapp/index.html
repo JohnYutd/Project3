@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="css/styleIndex.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div id="header">
+		Resilience Test
+	</div><br><br><br><br><br><br><br><br>
+	<div class="formclass">	
+		<form action="rest/uploadDownload/uploadFilesDownload" enctype="multipart/form-data" method="post">
+			Choose files to upload<br><br>
+			file1:<input type= "file" name="file1" required="required"/> <br/><br/>
+			file2:<input type= "file" name="file2" required="required"/> <br/><br/>
+			file3:<input type= "file" name="file3" required="required"/> <br/><br/>
+			Enter the Key:<input type="text" name="key" required="required"/><br/><br/>
+			<button name="submit" type="submit">Upload</button>
+		</form>
+	</div>
+</body>
+</html>
