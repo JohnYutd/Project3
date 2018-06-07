@@ -5,7 +5,6 @@ import java.util.*;
 
 public class Resilience {
 	
-	//新建四个文件对象，三个输入，一个输出
 	private File bFile;
 	private File fFile;
 	private File lFile;
@@ -20,9 +19,9 @@ public class Resilience {
 
 	//计算文件中的数据
 	public void compute() throws IOException,FileNotFoundException, BadFileFormatException  {
-		Scanner bScanner = new Scanner(bFile);//用户输入文件名
+		Scanner bScanner = new Scanner(bFile);//用户输入的文件名
 		Scanner fScanner = new Scanner(fFile);
-		PrintWriter pw = new PrintWriter(output);
+		PrintWriter pw = new PrintWriter(output);//write in server
 		
 		BuildingGrid bGrid = new BuildingGrid(bScanner,bFile);
 		bScanner.close(); ////

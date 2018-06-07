@@ -12,11 +12,14 @@
 	<div class="formclass">	
 		<form action="rest/uploadDownload/uploadFilesDownload" enctype="multipart/form-data" method="post">
 			Choose files to upload<br><br>
-			file1:<input type= "file" name="file1" required="required"/> <br/><br/>
-			file2:<input type= "file" name="file2" required="required"/> <br/><br/>
-			file3:<input type= "file" name="file3" required="required"/> <br/><br/>
+			BuildingMap:<input type= "file" name="file1" required="required"/> <br/><br/>
+			Floodmap:<input type= "file" name="file2" required="required"/> <br/><br/>
+			IndexMap:<input type= "file" name="file3" required="required"/> <br/><br/>
 			Enter the Key:<input type="text" name="key" required="required"/><br/><br/>
+			
 			<button name="submit" type="submit">Upload</button>
+			<button name="submit" type="submit" onClick="uploadAndSaveBMap()">uploadAndSaveBMap</button>
+			<button name="submit" type="submit" onClick="useFormerBMap()">useFormerBMap</button>
 		</form>
 	</div>
 </body>

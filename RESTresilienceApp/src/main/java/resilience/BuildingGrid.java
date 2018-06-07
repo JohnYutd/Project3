@@ -13,7 +13,9 @@ public class BuildingGrid extends Grid {
 	}
 	
 	public void shift(FloodGrid fgrid) {
+		//纵坐标相差的格子数
 		this.row_shift = (int) Math.round((fgrid.yllcorner() + fgrid.nrows() * cellsize() - yllcorner() - nrows() * cellsize())/cellsize());
+		//横坐标相差的格子数
 		this.col_shift = (int) Math.round((xllcorner() - fgrid.xllcorner())/cellsize());
 	}
 	

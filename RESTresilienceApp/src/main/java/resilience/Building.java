@@ -19,7 +19,7 @@ public class Building {
 	public void add(int x, int y) {
 		Coordinates c = new Coordinates(x,y);
 		bset.add(c);
-		fset.remove(c);
+		fset.remove(c);//´æÔÚÔòÉ¾³ı
 	}
 
 	public void add(Collection<Coordinates> fcells)  {

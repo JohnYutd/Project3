@@ -40,35 +40,35 @@ public class BuildingMap implements Serializable {
 		input.close();
 	}
 
-	// public void fillMap(Scanner input) {
-	// int maxrow = bgrid.nrows() + bgrid.row_shift();
-	// int maxcol = bgrid.ncols() + bgrid.col_shift();
-	// for ( int row = bgrid.row_shift(); row < maxrow; row++ )
-	// for ( int col = bgrid.col_shift(); col < maxcol; col++ ) {
-	// int index = input.nextInt();
-	// if ( index != bgrid.NODATA_value() ) {
-	// if ( row >= 0 && row < fgrid.nrows() && col >= 0 && col < fgrid.ncols() )
-	// {
-	// Building b = map.get(index);
-	// b.add(row,col);
-	// b.add(fgrid.contour(row, col));
-	// }
-	// }
-	// }
-	// }
+//	public void fillMap(Scanner input) {
+//		int maxrow = bgrid.nrows() + bgrid.row_shift();
+//		int maxcol = bgrid.ncols() + bgrid.col_shift();
+//		for ( int row = bgrid.row_shift(); row < maxrow; row++ )
+//			for ( int col = bgrid.col_shift(); col < maxcol; col++ ) {
+//				int index = input.nextInt();
+//				if ( index != bgrid.NODATA_value() ) {
+//					if ( row >= 0 && row < fgrid.nrows() && col >= 0 && col < fgrid.ncols() )
+//					{
+//						Building b = map.get(index);
+//						b.add(row,col);
+//						b.add(fgrid.contour(row, col));
+//					}
+//				}
+//			}
+//	 }
 
 	public void fillMap(File bFile) throws IOException, FileNotFoundException {
 		IntegerFileReader input = new IntegerFileReader(bFile);
-		int maxrow = bgrid.nrows() + bgrid.row_shift();
-		int maxcol = bgrid.ncols() + bgrid.col_shift();
+		int maxrow = bgrid.nrows() + bgrid.row_shift();//纵行 格子数
+		int maxcol = bgrid.ncols() + bgrid.col_shift();//横行 格子数
 		for (int row = bgrid.row_shift(); row < maxrow; row++)
 			for (int col = bgrid.col_shift(); col < maxcol; col++) {
 				int index = input.nextInt();
-				if (index != bgrid.NODATA_value()) {
+				if (index != bgrid.NODATA_value()) {   //不等于-9999
 					if (row >= 0 && row < fgrid.nrows() && col >= 0 && col < fgrid.ncols()) {
 						Building b = map.get(index);
-						b.add(row, col);
-						b.add(fgrid.contour(row, col));
+						b.add(row, col);         //bset中添加，fset中删除
+						b.add(fgrid.contour(row, col));   //fset中添加，fset删除所有bset中包含的元素（即building部分）
 					}
 				}
 			}
